@@ -2,7 +2,7 @@
 
 const EOL = require('os').EOL;
 const formatters = require('./formatters');
-
+const custom_formatters = require('./custom-formatters')
 const receipt = {
 	config: {
 		currency: '$',
@@ -44,5 +44,13 @@ receipt.addFormatters({
 	properties: formatters.properties,
 	table: formatters.table
 });
+
+// custom formatters
+receipt.addFormatters({
+  table2: custom_formatters.table2,
+  table3: custom_formatters.table3,
+  taxes: custom_formatters.taxes,
+  fiskal: custom_formatters.fiskal
+})
 
 module.exports = receipt;
